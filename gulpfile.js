@@ -14,7 +14,7 @@ function update_html() {
 
 function update_scripts() {
   return gulp
-    .src(['src/*.js'])
+    .src(['src/js/*.js'])
     .pipe(concat('main.js'))
     .pipe(gulp.dest('dest/js'))
     .pipe(browserSync.stream());
@@ -31,12 +31,15 @@ function update_styles() {
 
 function copy_files() {
   return gulp
-    .src(['src/images/**', 'src/json/images.json'], { base: 'src/' })
+    .src(['src/images/**', 'src/json/images.json'], {
+      base: 'src/'
+    })
     .pipe(gulp.dest('dest'));
 }
+
 function serve_browser() {
   browserSync.init({
-    server: './dest',
+    server: './dest'
   });
 
   gulp.watch(['src/*.html']).on('change', update_html);
