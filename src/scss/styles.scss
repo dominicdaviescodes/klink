@@ -2,6 +2,9 @@
 
 $navbar: #610065;
 $offWhite: #e1e2e1;
+$btn-primary: #930f93;
+$btn-hover: #f400e4;
+$btn-border: #b817b8;
 
 body {
   background-color: $offWhite;
@@ -31,4 +34,8 @@ h1 {
   color: $offWhite;
   margin: 0;
   padding: 0.2em;
+}
+
+button.btn-circle {
+  font-size: 2.5em;
 }
