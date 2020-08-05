@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
 
 $navbar: #610065;
-$offWhite: #e1e2e1;
+$background: #e1e2e1;
 $btn-primary: #930f93;
 $btn-hover: #f400e4;
 $btn-border: #b817b8;
+$box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
 
 body {
-  background-color: $offWhite;
+  background-color: $background;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -31,11 +32,36 @@ footer {
 }
 
 h1 {
-  color: $offWhite;
+  color: $background;
   margin: 0;
   padding: 0.2em;
 }
 
 button.btn-circle {
   font-size: 2.5em;
+  line-height: 1.0em;
+  color: $background;
+  border-color: $btn-border;
+  background-color: $btn-primary;
+  padding: 2px 5px;
+  margin: 0px 0px 0px 10px;
+  box-shadow: $box-shadow;
+}
+
+.btn-circle:hover {
+  color: $background;
+  background-color: $btn-hover;
+  border-color: $btn-border;
+}
+
+.btn-circle:focus {
+  color: $background;
+  box-shadow: $box-shadow;
+}
+
+.badge {
+  float: right;
+  margin-top: 1.2%;
+  padding: 0.5em 0.2em;
+  min-width: 55px;
 }
