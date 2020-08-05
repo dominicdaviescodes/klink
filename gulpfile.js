@@ -24,6 +24,10 @@ function update_styles() {
   return gulp
     .src(['src/scss/*.scss'])
     .pipe(sass())
+    .on('error', function (err) {
+      console.log(err.toString());
+      this.emit('end');
+    })
     .pipe(cleanCSS())
     .pipe(gulp.dest('dest/css'))
     .pipe(browserSync.stream());
