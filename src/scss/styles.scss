@@ -35,6 +35,16 @@ h1 {
   color: $background;
   margin: 0;
   padding: 0.2em;
+  text-transform: capitalize;
+
+  span {
+    color: #00de91;
+    font-size: 0.7em;
+  }
+
+  span:before {
+    content: ".... ";
+  }
 }
 
 button.btn-circle {

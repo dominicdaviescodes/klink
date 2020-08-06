@@ -62,6 +62,7 @@ var js_getCounter = assignCounter();
 function JS_APPInit(data) {
   var btnPrev = new js_button('prev', data);
   var btnNext = new js_button('next', data);
+  document.getElementById('js_mode').textContent = btnNext.mode;
 }
 
 var request = new XMLHttpRequest();
