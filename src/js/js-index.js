@@ -1,6 +1,6 @@
 function js_button(id, images) {
   this.id = id;
-  this.mode = 'art';
+  this.mode = 'nature';
   this.images = images[this.mode];
   this.count = 0;
   this.total = this.images.length;
@@ -63,6 +63,7 @@ function JS_APPInit(data) {
   var btnPrev = new js_button('prev', data);
   var btnNext = new js_button('next', data);
   document.getElementById('js_mode').textContent = btnNext.mode;
+  btnNext.swapImage();
 }
 
 var request = new XMLHttpRequest();
