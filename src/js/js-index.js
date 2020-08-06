@@ -1,9 +1,15 @@
-var firstName = 'Dominic';
-console.log(firstName);
+var request = new XMLHttpRequest();
+request.open('GET', 'json/images.json', true);
 
-function changeDivs() {
-  var e = document.getElementById('javascript_app');
-  // e.style.border = '3px dashed fuchsia';
+request.onload = function () {
+  if (request.status >= 200 && request.status < 400) {
+    // file is found and loaded
+    var data = JSON.parse(request.responseText);
+    console.log(data);
+  } else {
+    var lMessage = request.status + ' File not found!';
+    alert(lMessage);
+  }
 }
 
-changeDivs();
+request.send();
