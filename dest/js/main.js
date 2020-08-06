@@ -11,9 +11,48 @@ function js_button(id, images) {
   this.el.addEventListener('click', this.swapImage.bind(this));
 }
 
+
 js_button.prototype.swapImage = function () {
-  alert(this.id);
+
+  if (this.id == 'next') {
+    js_getCounter.increase();
+  } else {
+    js_getCounter.decrease();
+  }
+
+  this.count = js_getCounter.currentCounter(this.total);
+
+  console.log(this.count);
 }
+
+var assignCounter = function () {
+  var lCounter = 0;
+
+  function changeBy(val) {
+    lCounter += val;
+  }
+
+  return {
+    increase: function () {
+      changeBy(1);
+    },
+
+    decrease: function () {
+      changeBy(-1);
+    },
+
+    currentCounter: function (pTotal) {
+      if (lCounter > pTotal) {
+        lCounter = 1;
+      } else if (lCounter < 1) {
+        lCounter = pTotal;
+      }
+      return lCounter;
+    }
+  }
+}
+
+var js_getCounter = assignCounter();
 
 function JS_APPInit(data) {
   var btnPrev = new js_button('prev', data);
@@ -21,6 +60,7 @@ function JS_APPInit(data) {
 }
 
 var request = new XMLHttpRequest();
+
 request.open('GET', 'json/images.json', true);
 
 request.onload = function () {
