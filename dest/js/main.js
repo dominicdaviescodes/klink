@@ -21,6 +21,7 @@ js_button.prototype.swapImage = function () {
   }
 
   this.count = js_getCounter.currentCounter(this.total);
+  this.status.textContent = this.count + ' of ' + this.total;
   this.image.src = 'images/' + this.images[this.count - 1].image;
 
 }
