@@ -7,6 +7,7 @@ function js_button(id, images) {
   this.el = document.getElementById(id);
   this.image = document.getElementById('js_image');
   this.status = document.getElementById('js_badge');
+  this.credits = document.getElementById('js_credits');
 
   this.el.addEventListener('click', this.swapImage.bind(this));
 }
@@ -21,9 +22,12 @@ js_button.prototype.swapImage = function () {
   }
 
   this.count = js_getCounter.currentCounter(this.total);
-  this.status.textContent = this.count + ' of ' + this.total;
-  this.image.src = 'images/' + this.images[this.count - 1].image;
 
+  var lNum = this.count - 1;
+  this.status.textContent = this.count + ' of ' + this.total;
+  this.image.src = 'images/' + this.images[lNum].image;
+
+  this.credits.textContent = this.images[lNum].title + ' - ' + this.images[lNum].photographer;
 }
 
 var assignCounter = function () {
