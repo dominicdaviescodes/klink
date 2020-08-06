@@ -5,7 +5,7 @@ function js_button(id, images) {
   this.count = 0;
   this.total = this.images.length;
   this.el = document.getElementById(id);
-  this.image_id = document.getElementById('js_image');
+  this.image = document.getElementById('js_image');
   this.status = document.getElementById('js_badge');
 
   this.el.addEventListener('click', this.swapImage.bind(this));
@@ -21,8 +21,8 @@ js_button.prototype.swapImage = function () {
   }
 
   this.count = js_getCounter.currentCounter(this.total);
+  this.image.src = 'images/' + this.images[this.count - 1].image;
 
-  console.log(this.count);
 }
 
 var assignCounter = function () {
