@@ -132,3 +132,9 @@ $.getJSON('json/images.json', function (data) {
 }).fail(function (jqxhr, textStatus, error) {
   console.log('JSON error ' + error);
 });
+var vueApp = new Vue({
+  el: '#vue_app',
+  data: {
+    title: 'Vue.js'
+  }
+});
