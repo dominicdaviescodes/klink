@@ -31,6 +31,10 @@ footer {
   }
 }
 
+a.nav-link:not(.active) {
+  cursor: pointer;
+}
+
 h1 {
   color: $background;
   margin: 0;
