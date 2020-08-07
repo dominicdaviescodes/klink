@@ -116,7 +116,7 @@ function jq_button(app, obj, images, isNext) {
 
     var lNum = this.count - 1;
     $(this.status).text(this.count + ' of ' + this.total);
-    $(this.image).attr('src', 'images/' + this.images[lNum].image);
+    $(this.image).attr('src', 'images/' + this.images[lNum].image).hide().fadeIn();
     $(this.credits).text(this.images[lNum].title + ' - ' + this.images[lNum].photographer);
   });
 }
