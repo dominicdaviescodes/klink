@@ -66,8 +66,9 @@ function JS_APPInit(data) {
   btnNext.swapImage();
 }
 
-var request = new XMLHttpRequest();
 
+
+var request = new XMLHttpRequest();
 request.open('GET', 'json/images.json', true);
 
 request.onload = function () {
@@ -90,3 +91,9 @@ function jsNav(e) {
   $('.ss-containers').addClass('d-none');
   $('#' + e.textContent.toLowerCase() + '_app').removeClass('d-none');
 }
+
+$.getJSON('json/images.json', function (data) {
+  console.log(data);
+}).fail(function (jqxhr, textStatus, error) {
+  console.log('JSON error ' + error);
+})

@@ -66,8 +66,9 @@ function JS_APPInit(data) {
   btnNext.swapImage();
 }
 
-var request = new XMLHttpRequest();
 
+
+var request = new XMLHttpRequest();
 request.open('GET', 'json/images.json', true);
 
 request.onload = function () {
