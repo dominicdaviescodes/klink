@@ -10,6 +10,7 @@ var vueApp = new Vue({
   },
   methods: {
     loadImageJson() {
+      var self = this;
       fetch('./json/images.json')
         .then(function (response) {
           if (response.status !== 200) {
@@ -19,7 +20,10 @@ var vueApp = new Vue({
           return response.json();
         })
         .then(function (data) {
-          console.log(data);
+          // console.log(data);
+          self.images = data[self.mode];
+          self.image = self.images[0].image;
+          self.total = self.images.length;
         });
     },
   },
