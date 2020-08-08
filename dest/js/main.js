@@ -139,6 +139,7 @@ var vueApp = new Vue({
     mode: 'animals',
     image: '',
     count: 1,
+    total: 0,
     next: null,
     images: null,
   },
@@ -181,5 +182,10 @@ var vueApp = new Vue({
   },
   created() {
     this.loadImageJson();
+  },
+  computed: {
+    displayCount() {
+      return this.count + ' of ' + this.total;
+    },
   },
 });
