@@ -187,5 +187,11 @@ var vueApp = new Vue({
     displayCount() {
       return this.count + ' of ' + this.total;
     },
+    assignCredits() {
+      var lNum = this.count - 1;
+      return this.images === null
+        ? ''
+        : this.images[lNum].title + ' - ' + this.images[lNum].photographer;
+    },
   },
 });
