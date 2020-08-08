@@ -2,7 +2,11 @@ var vueApp = new Vue({
   el: '#vue_app',
   data: {
     title: 'Vue.js',
-    mode: 'animals'
+    mode: 'animals',
+    image: '',
+    count: 1,
+    next: null,
+    images: null,
   },
   methods: {
     loadImageJson() {
@@ -16,10 +20,10 @@ var vueApp = new Vue({
         })
         .then(function (data) {
           console.log(data);
-        })
-    }
+        });
+    },
   },
   created() {
     this.loadImageJson();
-  }
+  },
 });
