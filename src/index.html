@@ -92,8 +92,10 @@
         <div class="photo-credits"></div>
       </div>
       <div class="col bg-dark text-center p-2 button-controls">
-        <button class="btn btn-circle rounded-circle"><i class="fa fa-arrow-circle-left"></i> </button>
-        <button class="btn btn-circle rounded-circle"><i class="fa fa-arrow-circle-right"></i> </button>
+        <button v-on:click="buttonClick" class="btn btn-circle rounded-circle"><i class="fa fa-arrow-circle-left"></i>
+        </button>
+        <button v-on:click="buttonClick" class="btn btn-circle rounded-circle"><i class="fa fa-arrow-circle-right"></i>
+        </button>
         <span class="badge badge-light"> </span>
       </div>
     </div>

@@ -143,6 +143,24 @@ var vueApp = new Vue({
     images: null,
   },
   methods: {
+    buttonClick(e) {
+      this.next = e.target.className.indexOf('right') != -1 ? true : false;
+
+      if (this.next) {
+        this.count++;
+        if (this.count > this.total) {
+          this.count = 1;
+        }
+      } else {
+        this.count--;
+        if (this.count < 1) {
+          this.count = this.total;
+        }
+      }
+
+      this.image = this.images[this.count - 1].image;
+    },
+
     loadImageJson() {
       var self = this;
       fetch('./json/images.json')
