@@ -88,7 +88,7 @@
         <h1>{{ title }} <span>{{ mode }}</span> </h1>
       </div>
       <div class="col-12 p-0">
-        <img src="" alt="" class="img-fluid">
+        <img v-bind:src="'images/' + image" alt="" class="img-fluid">
         <div class="photo-credits"></div>
       </div>
       <div class="col bg-dark text-center p-2 button-controls">
