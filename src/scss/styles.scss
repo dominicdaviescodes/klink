@@ -7,9 +7,17 @@ $btn-hover: #f400e4;
 $btn-border: #b817b8;
 $box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
 
+html {
+  ::selection {
+    // stop text being highlighted
+    background: transparent;
+  }
+}
+
 body {
   background-color: $background;
   font-family: 'Roboto Condensed', sans-serif;
+  cursor: default;
 }
 
 .container {
