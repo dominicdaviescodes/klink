@@ -166,6 +166,7 @@ class ReactApp extends React.Component {
         self.setState({
           total: data[self.state.mode].length
         });
+        self.buttonClick(true);
       })
   }
 
@@ -179,9 +180,23 @@ class ReactApp extends React.Component {
     });
   }
 
+  buttonClick(pNext){
+    if(pNext){
+      this.setState({count: this.state.count + 1}, () => {this.assignImage()});
+      if(this.state.count > (this.state.total - 1)){
+        this.setState({count: 1});
+      }
+    }else {
+      this.setState({count: this.state.count -1}, () => {this.assignImage()});
+      if(this.state.count == 1){
+        this.setState({ count: this.state.total});
+      }
+    }
+  }
+
   renderButton(pNext){
     return(
-      <button className="btn btn-circle rounded-circle">
+      <button className="btn btn-circle rounded-circle" onClick={() => this.buttonClick(pNext)}>
         <i className={pNext ? "fa fa-arrow-circle-right" : "fa fa-arrow-circle-left"}></i>
       </button>
     )
