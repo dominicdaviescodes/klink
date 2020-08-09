@@ -36,29 +36,30 @@ class ReactApp extends React.Component {
   }
 
   render() {
-    return (
-      <div >
-      <div className = "col-12 bg-dark" >
-      <h1> {
-        ' ' }
-      React < span > < /span>< /
-      h1 > <
+    return ( <
+      div >
+      <
+      div className = "col-12 bg-dark" >
+      <
+      h1 > React < span > < /span></h1 >
+      <
       /div> <
       div className = "col-12 p-0" >
       <
-      img src = ""
-      alt = ""
-      className = "img-fluid" / >
+      img className = "img-fluid"
+      src = "" / >
       <
       div className = "photo-credits" > < /div> < /
       div > <
       div className = "col bg-dark text-center p-2 button-controls" >
       <
-      span className = "badge badge-light" > 4 < /span> < /
-      div > <
+      span className = "badge badge-light" > 4 < /span></div >
+      <
       /div>
-    );
+    )
   }
 }
 
-ReactDOM.render( < ReactApp / > , document.getElementById('react_app'));
+ReactDOM.render( < ReactApp / > ,
+  document.getElementById('react_app')
+)
