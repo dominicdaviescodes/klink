@@ -35,27 +35,40 @@ class ReactApp extends React.Component {
       })
   }
 
+  assignImage() {
+    let lImage = this.state.images[this.state.count - 1];
+    this.setState({
+      image: lImage.image
+    });
+    this.setState({
+      credits: lImage.title + ' - ' + lImage.photographer
+    });
+  }
+
+  renderButton(pNext){
+    return(
+      <button className="btn btn-circle rounded-circle">
+        <i className={pNext ? "fa fa-arrow-circle-right" : "fa fa-arrow-circle-left"}></i>
+      </button>
+    )
+  }
+
   render() {
-    return ( <
-      div >
-      <
-      div className = "col-12 bg-dark" >
-      <
-      h1 > React < span > < /span></h1 >
-      <
-      /div> <
-      div className = "col-12 p-0" >
-      <
-      img className = "img-fluid"
-      src = "" / >
-      <
-      div className = "photo-credits" > < /div> < /
-      div > <
-      div className = "col bg-dark text-center p-2 button-controls" >
-      <
-      span className = "badge badge-light" > 4 < /span></div >
-      <
-      /div>
+    let lImage = this.state.image || "";
+    return ( 
+      <div>
+        <div className="col-12 bg-dark" >
+          <h1>React<span></span></h1>
+      </div> 
+      <div className="col-12 p-0" >
+        <img className="img-fluid" src = {"images/" + lImage} />
+      <div className="photo-credits"></div> 
+      </div>
+      <div className="col bg-dark text-center p-2 button-controls">
+        {this.renderButton(false)}
+        {this.renderButton(true)}
+        <span className="badge badge-light"></span></div>
+      </div>
     )
   }
 }
