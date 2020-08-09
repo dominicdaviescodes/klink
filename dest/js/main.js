@@ -207,16 +207,16 @@ class ReactApp extends React.Component {
     return ( 
       <div>
         <div className="col-12 bg-dark" >
-          <h1>React<span></span></h1>
+          <h1>React<span>{this.state.mode}</span></h1>
       </div> 
       <div className="col-12 p-0" >
         <img className="img-fluid" src = {"images/" + lImage} />
-      <div className="photo-credits"></div> 
+      <div className="photo-credits">{this.state.credits}</div> 
       </div>
       <div className="col bg-dark text-center p-2 button-controls">
         {this.renderButton(false)}
         {this.renderButton(true)}
-        <span className="badge badge-light"></span></div>
+        <span className="badge badge-light">{this.state.count} of {this.state.total}</span></div>
       </div>
     )
   }
