@@ -132,6 +132,27 @@ $.getJSON('json/images.json', function (data) {
 }).fail(function (jqxhr, textStatus, error) {
   console.log('JSON error ' + error);
 });
+class ReactApp extends React.Component {
+  render() {
+    return ( <
+      div >
+      <
+      div className = "col-12 bg-dark" >
+      <
+      h1 > React < span > < /span> </h1 >
+      <
+      /div>
+
+      <
+      /div>
+    )
+  }
+}
+
+ReactDOM.render( <
+  ReactApp / > ,
+  document.getElementById('react_app')
+)
 var vueApp = new Vue({
   el: '#vue_app',
   data: {
